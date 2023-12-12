@@ -13,7 +13,7 @@ const Table = () => {
   const [rows, setRows] = useState(data.tableRows);
   const [cols, setCols] = useState(data.tableCols);
   const [searchInput, setSearchInput] = useState("");
-  // const [count, setCount] = useState(0);
+  const [countNo, setCount] = useState(rows.length);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -88,12 +88,14 @@ let count = 0;
 
   const handleCreate = () => {
     setUserInput(!userInput);
+    setCount(prev => prev+ 1)
     const data = userData;
     const obj = {
-      id: rows?.length + 1,
+      id: countNo + 1,
       firstName: firstName,
       lastName: lastName,
       age: age,
+      fullName : firstName + " " + lastName,
       isEditable: false,
     };
     setUserData([...data, obj]);
@@ -127,6 +129,7 @@ let count = 0;
                 type="text"
                 className="border input-div w-[25%]"
                 placeholder="Enter your first Name"
+                value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </span>
@@ -135,6 +138,7 @@ let count = 0;
                 type="text"
                 placeholder="Enter your last Name"
                 className="border input-div1 w-[25%]"
+                value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
             </span>
@@ -143,6 +147,7 @@ let count = 0;
                 type="number"
                 placeholder="Enter your age"
                 className="border input-div1 w-[25%]"
+                value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
             </span>
@@ -173,7 +178,7 @@ let count = 0;
         <tfoot className="p-[20px] m-[10px] rows bg-red-50">
           <tr>
             <td className="border-[0px]">
-              {check ? `${userData.length} rows selected` : count > 0 && " "}
+              {check ? `${userData.length} rows selected` : count > 0 ? `${count} rows selected` : " "}
             </td>
             <td className="border-[0px]">{""}</td>
             <td className="border-[0px]">{""}</td>
@@ -192,7 +197,7 @@ let count = 0;
                 currentPage * rowsPerPage,
                 userData.length
               )} `}
-              of {userData.length}
+              of {rows.length}
             </td>
             <td className="border-[0px]">
               <button
