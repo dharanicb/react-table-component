@@ -6,7 +6,7 @@ import Table from './Components/DataTable/TableData';
 function App() {
 
   // const tableData = useSelector((state) => state.expenses.tableData);
-  // console.log(tableData ,"dharani edi neede");
+  // console.log(tableData);
 
   return (
     <div className='flex justify-center items-center'>

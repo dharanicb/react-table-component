@@ -43,6 +43,7 @@ const onDescendingOrder = (name,order) => {
             </div>
           </th>
         ))}
+        <th>Edit</th>
     </tr>
   );
 };

@@ -105,13 +105,13 @@ let count = 0;
   };
 
   return (
-    <div className="flex flex-col justify-center w-[90%]">
+    <div className="flex flex-col justify-center w-[80%]">
       <div className="mt-10">
         <div className="flex border border-purple-200 rounded">
           <input
             type="search"
             className="block w-full px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            placeholder="Search full name..."
+            placeholder="Search Full name..."
             onChange={(e) => setSearchInput(e.target.value)}
             value={searchInput}
           />
@@ -127,8 +127,8 @@ let count = 0;
             <span>
               <input
                 type="text"
-                className="border input-div w-[25%]"
-                placeholder="Enter your first Name"
+                className="mr-3 input-div w-[30%] border-purple-200 px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                placeholder="Enter your First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
@@ -136,8 +136,8 @@ let count = 0;
             <span>
               <input
                 type="text"
-                placeholder="Enter your last Name"
-                className="border input-div1 w-[25%]"
+                placeholder="Enter your Last name"
+                className="mr-3 input-div w-[30%] border-purple-200 px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
@@ -145,15 +145,15 @@ let count = 0;
             <span>
               <input
                 type="number"
-                placeholder="Enter your age"
-                className="border input-div1 w-[25%]"
+                placeholder="Enter your Age"
+                className="input-div w-[25%] border-purple-200 px-4 py-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
             </span>
 
             <button
-              className="px-4 text-white bg-purple-600 border-l rounded create_btn py-4"
+              className="px-4 text-white bg-purple-600 border-l rounded create_btn py-4 w-[120px]"
               disabled={!firstName && !lastName && !age}
               onClick={handleCreate}
             >
@@ -217,6 +217,7 @@ let count = 0;
                 <BsFillArrowRightCircleFill />
               </button>
             </td>
+            <td className="border-[0px]">{""}</td>
           </tr>
         </tfoot>
       </table>

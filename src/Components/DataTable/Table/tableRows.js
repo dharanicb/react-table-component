@@ -110,7 +110,7 @@ const TableRows = ({ data, check, setData, setIncrease }) => {
                 {isEditable ? (
                   <TiTickOutline
                     onClick={() => handleTick(eachData.id)}
-                    className="m-5 "
+                    className="w-6 h-6 text-blue-700 hover:scale-125 cursor-pointer m-5"
                   />
                 ) : (
                   <EditIcon
@@ -139,7 +139,7 @@ const TableRows = ({ data, check, setData, setIncrease }) => {
               <td>{eachData.id}</td>
               <td>{eachData.firstName}</td>
               <td>{eachData.lastName}</td>
-              <td>{eachData.age}</td>
+              <td>{eachData.id}</td>
               <td>{eachData.fullName}</td>
               <td>
                 {/* {!isEditable && ( */}
