@@ -139,7 +139,7 @@ const TableRows = ({ data, check, setData, setIncrease }) => {
               <td>{eachData.id}</td>
               <td>{eachData.firstName}</td>
               <td>{eachData.lastName}</td>
-              <td>{eachData.id}</td>
+              <td>{eachData.age}</td>
               <td>{eachData.fullName}</td>
               <td>
                 {/* {!isEditable && ( */}
